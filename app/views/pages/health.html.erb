@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Application Name - Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1CC6EC;
+      color: #000000;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #555;
+    }
+
+    nav {
+      background-color: #1CC6EC;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    nav a.logo {
+      font-size: 25px;
+      font-weight: bold;
+      margin-right: auto;
+    }
+
+    .home_header {
+      background-color: #973434;
+      color: #FFFFFF;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    footer {
+      background-color: #02584E;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }    
+
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a.logo {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      nav a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Global Enbig Network Private Limited</h1>
+  </header>
+
+  <nav>
+    <a href="/" class="logo"><img src="<%=asset_path('enbiglogo.png')%>" alt="Your Logo"></a>
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="/health">Health Tips</a>
+    <a href="/business">Business Opportunities</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
+    <a href="/aboutus">About Us</a>
+  </nav>
+
+  <div>
+    <!-- Your product page content goes here -->
+    <div class="home_header">
+      <h2>Health Tips</h2>
+    </div>
+    
+    <p>This is the health tips page content.</p>
+  </div>
+  <footer>
+    <div>
+      <h2>Contact Informations</h2>
+      <h3>Global Enbig Network Private Limited</h3>
+      <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
+    </div>
+    <div>
+      <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+    </div>
+    
+  </footer>
+</body>
+</html>
