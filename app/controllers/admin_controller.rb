@@ -1,4 +1,6 @@
-class AdminController < ApplicationController
-    def login
+class AdminController < Devise::SessionsController
+    
+    def destroy
+        super
     end
 end
