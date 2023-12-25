@@ -59,10 +59,58 @@
       background-color: #02584E;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
+      position: relative;
       bottom: 0;
       width: 100%;
+    }
+    .footer-main{
+      padding: 3%;
+    }
+    .home-main {
+      margin:5%;
+
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .image-item {
+      width: 25%; /* Adjust the width based on your preference to display 4 images in a row */
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .image-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-item p {
+      text-align: center;
+      margin-top: 5px;
+    }
+    .coooo {
+      display: flex;
+      flex-direction: column;
+    }
+    .coooo p {
+      font-size: 20px;
+    }
+    .right-side{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .right-side p {
+      font-size: 20px;
+    }
+    .main-content {
+      margin: 5%;
+    }
+    .main-content h1 {
+      color: #054E34;
     }
 
     @media screen and (max-width: 600px) {
@@ -105,16 +153,55 @@
     <div class="home_header">
       <h2>Products</h2>
     </div>
-    <p>This is the product page content.</p>
+    <div class="home-main">
+      <div class="main-content">
+        <h1>Introductory Regular Products:</h1>
+        <div class="coooo">
+          <p>1. Coconut Oil (Sulphur & Smoke free)</p>
+          <p>2. Virgin coconut oil (Virgin)</p>
+          <p>3. Tea Powder (Best quality, from Nilgiri)</p>
+          <p>4. Coffee Powder (Super quality from Coorg)</p>
+          <p>5. Chilli Powder Processed by Enbig Global from selected quality Chilli</p>
+          <p>6. Pappadam (Exclusively made for Global Enbig as per our quality standard)</p>
+          <p>7. Rice (Best selected quality)</p>
+          <p>8. Coconut Lamb Oil (Perfumed & Ordinary)</p>
+          <p>Introductory on demand Products - 100% ശുദ്ധമായ വെളിച്ചെണ്ണയിൽ ഉണ്ടാക്കിയത്</p>
+          <p>1. പപ്പടവട (Pappadavada)</p>
+          <p>2. ശർക്കര വരട്ടി ഗ്ലോബൽ എൻബിഗ് നെറ്റ് വർക്ക്</p>
+        </div>
+        <div class="right-side" >
+          <p>ഉണ്ണികൃഷ്ണൻ നായർ</p>
+          <p>എക്സിക്യുട്ടീവ് ഡയറക്ടർ</p>
+        </div>
+        
+                                                                                                                                                                    
+                                                                                                                                                                    
+      </div>
+      <div class="image-grid">
+      
+
+        <% @product.each do |home| %>
+          <% if home.image.attached? %>
+            <div class="image-item">
+              <%= image_tag home.image , class: "responsive-image", alt: "Responsive image"%>
+              <p><%= home.name %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    
   </div>
   <footer>
-    <div>
-      <h2>Contact Informations</h2>
-      <h3>Global Enbig Network Private Limited</h3>
-      <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
-    </div>
-    <div>
-      <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+    <div class="footer-main">
+      <div>
+        <h2>Contact Informations</h2>
+        <h3>Global Enbig Network Private Limited</h3>
+        <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
+      </div>
+      <div>
+        <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+      </div>
     </div>
     
   </footer>

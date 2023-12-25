@@ -59,10 +59,64 @@
       background-color: #02584E;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
+      position: relative;
       bottom: 0;
       width: 100%;
+    }
+    .footer-main{
+      padding: 3%;
+    }
+    .container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .post-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow for a glowing effect */
+      transition: box-shadow 0.3s ease; /* Adding a smooth transition effect */
+    }
+
+    .post-card:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase the shadow on hover for a stronger glowing effect */
+    }
+
+    .post-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 20px;
+    }
+
+    .post-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .post-body {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 5%;
+    }
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+    }
+    .main {
+      /* background-color: #A4B0BD; */
     }
 
     @media screen and (max-width: 600px) {
@@ -100,20 +154,40 @@
     <a href="/aboutus">About Us</a>
   </nav>
 
-  <div>
+  <div class="main">
     <div class="home_header">
       <h2>Blog</h2>
     </div>
-    <p>This is the Blog page content.</p>
+    <div class="main-content">
+      <% @blog.each do |home| %>
+        <div class="container mt-4">
+          <div class="post-card">
+            <% if home.image.attached? %>
+              <%= image_tag home.image , class: "responsive-image", alt: "Responsive image"%>
+
+            <% end %>
+            <div class="post-content">
+
+              <h1 class="post-title"><%= home.title %></h1>
+              <p class="post-body"><%= home.content %></p>
+            </div>
+          </div>
+        </div>
+        
+        
+      <% end %>
+    </div>
   </div>
   <footer>
-    <div>
-      <h2>Contact Informations</h2>
-      <h3>Global Enbig Network Private Limited</h3>
-      <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
-    </div>
-    <div>
-      <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+    <div class="footer-main">
+      <div>
+        <h2>Contact Informations</h2>
+        <h3>Global Enbig Network Private Limited</h3>
+        <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
+      </div>
+      <div>
+        <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+      </div>
     </div>
     
   </footer>

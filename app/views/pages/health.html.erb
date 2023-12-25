@@ -59,11 +59,38 @@
       background-color: #02584E;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
+      position: relative;
+      overflow: hidden;
       bottom: 0;
       width: 100%;
     }    
+    .footer-main{
+      padding: 3%;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .health {
+      background-image: url("<%=image_path('Rectangle 53.png')%>"); /* Replace 'background_image.jpg' with the actual filename of your image */
+      background-size: cover; /* Adjust as needed */
+      
+      background-position: center; /* This property centers the background image within the container */
+      background-repeat: no-repeat; /* This property prevents the background image from repeating */ /* Set text color to white or a color that contrasts well with your background */
+      width: 100%;
+    }
+
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      margin: 10%;
+    }
+    .text-content p {
+      font-size: 20px;
+    }
+    .text-content p:nth-child(even){font-weight: bold;}
+    .text-content p:nth-child(odd){margin-left: 2%;}
 
     @media screen and (max-width: 600px) {
       nav {
@@ -105,17 +132,53 @@
     <div class="home_header">
       <h2>Health Tips</h2>
     </div>
+    <div class="main-content">
+      <div class= "health">
+        <div class="text-content">
+          <h1>മായവും ആരോഗ്യപ്രശ്നങ്ങളും:</h1>
+          <p>ഭക്ഷ്യഎണ്ണകൾ :</p>
+          <p>ആർജിമോൺ  ഓയിൽ,മിനറൽ ഓയിൽ,കാസ്റ്റർ ഓയിൽ റബ്ബർ കുരു,വാക      മരത്തിൻറ്റെ കുരു മുതലായവ (ഹൃദ്രോഗം, ട്യൂമർ, കാൻസർ, കഴ്ച്ച ത്തകരാറുകൾ,കരൾ രോഗം,വയറിന് അസ്വസ്ഥതകൾ)</p>
+          <p>ചായ :</p>
+          <p>മറ്റ്ഇലകൾ ,ഉപയോഗിച്ച ചായപ്പൊടി,അയേൺ ഫൈലിംസ്,(വയറ്റന് അസ്വസ്ഥതകൾ)</p>
+          <p>മുളകു പൊടി :  </p>
+          <p>ഇഷ്ടികപ്പൊടി സുഡാൻ രാസപദാർത്ഥങ്ങൾ (ചർദ്ദി,വയറിളക്കം,കാൻസർ)</p>
+          <p>പപ്പടം : </p>
+          <p>മൈദ,വില കുറഞ്ഞ എണ്ണകൾ (സ്വാദ് കുറവ്, വയറിന് അസ്വസ്ഥതകൾ</p>
+          <p>കാപ്പിപ്പൊടി : </p>
+          <p>പുളിങ്കുരു,ഈന്തപ്പഴകുരു എന്നിവ പൊടിച്ചത് (വയറിളക്കം)</p>
+        </div>
+        
+
+        
+                          
+
+            
+                          
+
+        
+                          
+
+                
+                          
+
+        
+                          
+
+      </div>
+    </div>
     
-    <p>This is the health tips page content.</p>
+    
   </div>
   <footer>
-    <div>
-      <h2>Contact Informations</h2>
-      <h3>Global Enbig Network Private Limited</h3>
-      <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
-    </div>
-    <div>
-      <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+    <div class="footer-main">
+      <div>
+        <h2>Contact Informations</h2>
+        <h3>Global Enbig Network Private Limited</h3>
+        <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
+      </div>
+      <div>
+        <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+      </div>
     </div>
     
   </footer>

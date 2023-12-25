@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Application Name - Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #A4B0BD;
+      color: #000000;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #555;
+    }
+
+    nav {
+      background-color: #4C4B4B;
+      overflow: hidden;
+      display: flex;
+      flex-direction: 'row';
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      transition:.4s;
+    }
+
+    nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 14px 16px;
+      text-align: center;
+      z-index: 1;
+      transform: translateY(6px);
+    }
+
+    nav a:hover {
+      
+      /* color: #0ef; */
+      transform: translateY(0);
+      box-shadow:
+        inset 0 0 60px whitesmoke,
+        inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff,
+        inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff,
+        0 0 50px #fff,
+        -10px 0 80px #f0f,
+        10px 0 80px #0ff;
+    }
+
+    
+
+    nav a.logo {
+      font-size: 25px;
+      font-weight: bold;
+      margin-right: auto;
+    }
+
+    .home_header {
+      background-color: #973434;
+      color: #FFFFFF;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    footer {
+      background-color: #02584E;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      background-color: #BFBFBF;
+      height: 100%;
+      position: fixed;
+    }
+    .card {
+      margin: 10%;
+      background-color: #FFFFFF;
+      
+      height: 60%;
+      width: 80%;
+      position: absolute;
+      border-radius: 30px;
+      overflow: overlay;
+      box-shadow: 5px 10px #757D75;
+    }
+
+    .card-content {
+      width: 100%;
+      background-color: #4C4B4B;
+      color: #FFF;
+      position: relative;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      padding: 3%;
+      background-color: #2C3335;
+    }
+    .responsive-image {
+      width: 10%;
+    }
+    .table-view {
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      flex-direction: column;
+    }
+    .table-body {
+      text-align :center;
+    }
+
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      
+      
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 20px;
+      
+      
+    }
+
+    #customers tr:nth-child(even){background-color: #A4B0BD;}
+    #customers tr:nth-child(odd){background-color: #99AAAB;}
+
+    #customers tr:hover {background-color: #000000; color: #FFFFFF;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #04AA6D;
+      color: white;
+    }
+    .table-content {
+      margin: 2%;
+      
+    }
+
+    .glow-on-hover {
+        width: 100%;
+        height: 50px;
+        padding: 12px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+
+    .glow-on-hover:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+        color: #000
+    }
+
+    .glow-on-hover:active:after {
+        background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+        opacity: 1;
+    }
+
+    .glow-on-hover:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+    .tr-table {
+      text-align: center;
+    }
+
+    @keyframes glowing {
+        0% { background-position: 0 0; }
+        50% { background-position: 400% 0; }
+        100% { background-position: 0 0; }
+    }
+
+    .form-group {
+    margin-bottom: 20px;
+    }
+
+    .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+
+    .form-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    }
+
+    .form-input-file {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    }
+
+    .btn-submit {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .btn-submit:hover {
+    background-color: #2980b9;
+    }
+
+
+    /* container{
+      width: 1000px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap:wrap;
+      
+    }
+
+    .container .card{
+      position: relative;
+    }
+
+    .container .card .face{
+      width:300px;
+      height: 200px;
+      transition:.4s;
+      
+    }
+
+    .container .card .face.face1{
+      position: relative;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-content:center;
+      align-items: center;
+      z-index: 1;
+      transform: translateY(100px);
+    }
+
+    .container .card:hover .face.face1{
+      transform: translateY(0);
+      box-shadow:
+        inset 0 0 60px whitesmoke,
+        inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff,
+        inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff,
+        0 0 50px #fff,
+        -10px 0 80px #f0f,
+        10px 0 80px #0ff;
+      
+    }
+
+
+    .container .card .face.face1 .content{
+      opacity: .2;
+      transition:  0.5s;
+      text-align: center;
+      
+      
+      
+      
+    
+
+    }
+
+    .container .card:hover .face.face1 .content{
+      opacity: 1;
+    
+    }
+
+    .container .card .face.face1 .content i{
+      font-size: 3em;
+      color: white;
+      display: inline-block;
+      
+    }
+
+    .container .card .face.face1 .content h3{
+      font-size: 1em;
+      color: white;
+      text-align: center;
+      
+
+    }
+
+    .container .card .face.face1 .content a{
+      transition: .5s;
+    } */
+
+
+
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a.logo {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      nav a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <nav>
+    <a href="/admin_home" class="logo">EnBig-Admin</a>
+    <a href="/admin_home"><b>Home</b></a>
+    <a href="/admin_product">Products</a>
+    <%# <a href="/health">Health Tips</a> %>
+    <a href="/admin_business">Business Opportunities</a>
+    <a href="/admin_blog">Blog</a>
+    <a href="/admin_contact">Contact</a>
+    <%# <a href="/aboutus">About Us</a> %>
+    <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <div class = "card-content">
+        <div class="main-content">
+            <%= form_with model: @blog, local: true, html: {multipart: true} do |form| %>
+                <div class="form-group">
+                    <%= form.label :title, class: "form-label"  %>
+                    <%= form.text_field :title, class: "form-input", placeholder: "Enter Title"  %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :content, class: "form-label"  %>
+                    <%= form.text_area :content , class: "form-input", placeholder: "Enter content here" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :image, class: "form-label"  %>
+                    <%= form.file_field :image , class: "form-input-file" %>
+                </div>
+
+                <%= form.submit "Create Blog" , class: "btn-submit" %>
+            <% end %>
+
+        </div>
+        <div class="table-view">
+          <h1>List of Blogs</h1>
+
+          <div class="table-content">
+            <table id="customers">
+              <thead>
+                <tr class = 'tr-table'>
+                  <th>Name</th>
+                  <th>Image</th>
+                  <th>Content</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody class="table-body">
+                <% @data.each do |home| %>
+                  <tr>
+                    <td><%= home.title %></td>
+                    <td>
+                      <% if home.image.attached? %>
+                        <%= image_tag home.image,class: "responsive-image", alt: "Responsive image"%>
+                      <% else %>
+                        No Image
+                      <% end %>
+                    </td>
+                    <td><%= home.content %></td>
+                    <td>
+                      <button class="glow-on-hover delete-button" type="button" onclick="redirectToCustomRoute(<%= home.id %>)">Delete</button>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+       
+
+      </div>
+    </div>
+    
+  </div>
+  
+</body>
+<script>
+  function redirectToCustomRoute(id) {
+    window.location.href = '/blog/destroy/' +id;
+  }
+</script>
+</html>

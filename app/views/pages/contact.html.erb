@@ -59,11 +59,105 @@
       background-color: #02584E;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
+      position: relative;
       bottom: 0;
+    }
+    .footer-main{
+      padding: 3%;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
       width: 100%;
     }
+    .contact {
+      background-image: url("<%=image_path('contact.png')%>"); /* Replace 'background_image.jpg' with the actual filename of your image */
+      background-size: cover; /* Adjust as needed */
+      
+      background-position: center; /* This property centers the background image within the container */
+      background-repeat: no-repeat; 
+      width: 100%;
+      
+    }
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 5%;
+    }
+    .letf-side {
+      flex: 1;
+      backdrop-filter: blur(10px);
+    }
+
+    .right-side {
+      flex: 1;
+    }
+
+    .letf-side-1 {
+      display: flex;
+      flex-direction: row;
+      gap: 2%;
+    }
+    .letf-side-2 {
+      display: flex;
+      flex-direction: row;
+      gap: 2%;
+    }
+
+    .left-content {
+      margin :20%;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+    .form {
+      
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #000000;
+      border-radius: 5px; 
+      background-color: #FFFFFF;  
+    }
+
+    .text {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
 
     @media screen and (max-width: 600px) {
       nav {
@@ -104,16 +198,63 @@
     <div class="home_header">
       <h2>Contact</h2>
     </div>
-    <p>This is the Contact page content.</p>
+    <div class="main-content">
+      <div class= "contact">
+        <div class="main">
+          <div class="letf-side">
+            <div class="left-content">
+              <h1>Contact Us</h1>
+              <div class="letf-side-1">
+                <div><img src="<%=asset_path('Vector.png')%>" alt="phone"></div>
+                <div class= "text">+91 96777 84313</div>
+                
+                
+              </div>
+              <div class="letf-side-2">
+                <div><img src="<%=asset_path('Group 2.png')%>" alt="mail"></div>
+                <div class= "text">kpopragmatic@gmail.com</div>
+                
+                
+              </div>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class= "form">
+              <%= form_with model: @message, local: true do |form| %>
+                <h2>Ask Your Queries</h2>
+                <div class="form-group">
+                  <%= form.label :email %>
+                  <%= form.text_field :email, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= form.label :subject %>
+                  <%= form.text_field :subject, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= form.label :message %>
+                  <%= form.text_area :message, class: 'form-control' %>
+                </div>
+
+                <%= form.submit "Send Message", class: 'btn btn-primary' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <footer>
-    <div>
-      <h2>Contact Informations</h2>
-      <h3>Global Enbig Network Private Limited</h3>
-      <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
-    </div>
-    <div>
-      <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+    <div class="footer-main">
+      <div>
+        <h2>Contact Informations</h2>
+        <h3>Global Enbig Network Private Limited</h3>
+        <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
+      </div>
+      <div>
+        <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+      </div>
     </div>
     
   </footer>

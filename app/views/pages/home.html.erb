@@ -60,12 +60,25 @@
       background-color: #02584E;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
+      position: relative;
       bottom: 0;
       width: 100%;
     }
+    .footer-main {
+      padding: 3%;
+    }
+    .home-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 2%;
 
+    }
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+    }
     @media screen and (max-width: 600px) {
       nav {
         flex-direction: column;
@@ -108,17 +121,27 @@
     <div class="home_header">
       <h2>Home</h2>
     </div>
+    <div class="home-main">
+      
+
+      <% @home.each do |home| %>
+        <% if home.image.attached? %>
+          <%= image_tag home.image , class: "responsive-image", alt: "Responsive image"%>
+        <% end %>
+      <% end %>
+    </div>
     
-    <p>This is the home page content.</p>
   </div>
   <footer>
-    <div>
-      <h2>Contact Informations</h2>
-      <h3>Global Enbig Network Private Limited</h3>
-      <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
-    </div>
-    <div>
-      <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+    <div class="footer-main">
+      <div>
+        <h2>Contact Informations</h2>
+        <h3>Global Enbig Network Private Limited</h3>
+        <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
+      </div>
+      <div>
+        <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+      </div>
     </div>
     
   </footer>
