@@ -32,6 +32,10 @@ gem "jbuilder"
 
 #devise for authentication
 gem 'devise'
+
+#active storage
+gem "aws-sdk-s3", require: false
+
 #bootstarp for style
 # Gemfile
 # gem 'bootstrap', '~> 5.0'
