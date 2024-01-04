@@ -59,11 +59,60 @@
       background-color: #02584E;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
+      position: relative;
       bottom: 0;
       width: 100%;
     }
+    .footer-main{
+      padding: 3%;
+    }
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      width:100%;
+    }
+    .health {
+      background-image: url("<%=image_path('business.png')%>"); /* Replace 'background_image.jpg' with the actual filename of your image */
+      background-size: cover; /* Adjust as needed */
+      
+      background-position: center; /* This property centers the background image within the container */
+      width: 100%;
+      background-repeat: no-repeat; /* This property prevents the background image from repeating */ /* Set text color to white or a color that contrasts well with your background */
+    }
+
+    .business-content {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;
+      margin: 6%;
+    }
+
+    .text-content {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin: 3%;
+      margin-left: 15%;
+    }
+    .highlight-content {
+      display:  flex;
+      flex-wrap: wrap;
+      margin: 5%;
+      justify-content:center;
+    }
+    .text-content p {
+      font-size: 20px;
+    }
+    .text-content-2 {
+      background-color: rgba(223, 254, 36, 0.87);
+      text-align: center;
+      padding: 2%;
+    }
+    .text-content-3 {
+      text-align: center;
+    }
+
 
     @media screen and (max-width: 600px) {
       nav {
@@ -104,16 +153,74 @@
     <div class="home_header">
       <h2>Expression of interest to purchase and business opportunities for nair community members</h2>
     </div>
-    <p>This is the business page content.</p>
+    <div class="main-content">
+      <div class= "health">
+        <div class="business-content">
+          <h4>Business</h4>
+          <p>we provide opportunity to earn money especially for Nair community members without investment (T & C apply) to those who are ready to market our products (Retail, wholesale and export)</p>
+        </div>
+        <div class = "highlight-content">
+          <h1>Highlights</h1>
+        </div>
+        <div class="text-content">
+          <ul><li>Continuous and increasing income from Rs.10,000 to 50,000 or more on monthly basis</li></ul>
+          <ul><li>You can appoint others as freelancer or agent to earn more money</li></ul>
+          <ul><li>You also can try wholesale selling</li></ul>
+          <ul><li>Part- or full-time work and earn money</li></ul>
+          <ul><li>No investment (T & C apply)</li></ul>
+          <ul><li>Portion of the profit goes to GNSS which shall be utilized for the welfare of the community members</li></ul>
+          <ul><li>We provide other business opportunities such as logistic, packing, manufacturing etc.</li></ul>
+          <ul><li>Approximate revenue working</li></ul>
+          <ul><li>Total 12 items</li></ul>
+          <ul><li>Average purchase by a small family. Rs.1,500 P.M x 50 family = 75,000 x 15% as commission=11,250.</li></ul>
+          <ul><li>When we have 50 products, the earning can be approximately 50,000 Per month.</li></ul>
+        </div>
+        <%# <div class="text-content-2">
+          <h1>Our Mission</h1>
+          <p>Plough back the consumer goods consumption economy to the welfare of the community.</p>
+        </div>
+        <div class="text-content-3">
+          <h1>List of Directors</h1>
+        </div> %>
+                                    
+
+
+
+
+
+
+
+
+        <hr style="height:5px;width: 10%;background-color: #F00">
+
+        
+                          
+
+            
+                          
+
+        
+                          
+
+                
+                          
+
+        
+                          
+
+      </div>
+    </div>
   </div>
   <footer>
-    <div>
-      <h2>Contact Informations</h2>
-      <h3>Global Enbig Network Private Limited</h3>
-      <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
-    </div>
-    <div>
-      <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+    <div class="footer-main">
+      <div>
+        <h2>Contact Informations</h2>
+        <h3>Global Enbig Network Private Limited</h3>
+        <p>11/12, 4th Floor, Chateau D'Ampa 37, Nelson Manickam RoadChennai - 600029(TamilNadu)</p>
+      </div>
+      <div>
+        <p>&copy; 2023 Your Application Name. All rights reserved.</p>
+      </div>
     </div>
     
   </footer>
