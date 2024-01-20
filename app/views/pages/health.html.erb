@@ -91,6 +91,19 @@
     }
     .text-content p:nth-child(even){font-weight: bold;}
     .text-content p:nth-child(odd){margin-left: 2%;}
+    .home-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 2%;
+
+    }
+
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+    }
 
     @media screen and (max-width: 600px) {
       nav {
@@ -147,8 +160,14 @@
           <p>കാപ്പിപ്പൊടി : </p>
           <p>പുളിങ്കുരു,ഈന്തപ്പഴകുരു എന്നിവ പൊടിച്ചത് (വയറിളക്കം)</p>
         </div>
-        
 
+        <div class="home-main">
+          <img src="<%=asset_path('മില്ലെറ്റ്സ്_page-0001.jpg')%>" alt="Responsive image" class="responsive-image">
+          <img src="<%=asset_path('മില്ലെറ്റ്സ്_page-0002.jpg')%>" alt="Responsive image" class="responsive-image">
+          <img src="<%=asset_path('മില്ലെറ്റ്സ്_page-0003.jpg')%>" alt="Responsive image" class="responsive-image">
+          <img src="<%=asset_path('മില്ലെറ്റ്സ്_page-0004.jpg')%>" alt="Responsive image" class="responsive-image">
+        
+        </div>
         
                           
 
